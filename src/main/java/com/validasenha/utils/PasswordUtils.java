@@ -6,7 +6,7 @@ public class PasswordUtils {
     public static final String REGEX_DIGIT = ".*\\d.*";
     public static final String REGEX_UPPERCASE_CHAR = "(.*[A-Z].*)";
     public static final String REGEX_LOWERCASE_CHAR = "(.*[a-z].*)";
-    public static final String REGEX_SPECIAL_CHAR = "[!@#$%^&*()-+]";
+    public static final String REGEX_SPECIAL_CHAR = "(.*[!@#$%^&*()-+].*)";
     public static final String REGEX_NOT_REPEATED = "^(?:([A-Za-z])(?!.*\\1))*$";
 
     public static final String SIZE_INVALID = "A senha precisa ter um tamanho de 9 ou mais";

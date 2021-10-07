@@ -79,7 +79,19 @@ public class ValidatePasswordServiceTest {
 
     @Test
     public void shouldValidateTrueWhenPasswordHasSpecialCharacters() {
-        Boolean isSpecialCharacter = service.validateSpecialChar("ABc");
+        Boolean isSpecialCharacter = service.validateSpecialChar("abc!@#$123");
         assertTrue(isSpecialCharacter);
+    }
+
+    @Test
+    public void shouldValidateFalseWhenPasswordHasRepeatingCharacters() {
+        Boolean isRepeatedCharacter = service.validateNotRepeated("AAbcde");
+        assertFalse(isRepeatedCharacter);
+    }
+
+    @Test
+    public void shouldValidateTrueWhenPasswordHasNoRepeatingCharacters() {
+        Boolean isRepeatedCharacter = service.validateNotRepeated("abcde");
+        assertTrue(isRepeatedCharacter);
     }
 }
