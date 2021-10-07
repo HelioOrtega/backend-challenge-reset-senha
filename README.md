@@ -5,7 +5,7 @@
 * [Tecnologias](#tecnologias)
 * [Setup](#setup)
 * [Validação de Senha](#validação-de-senha)
-* [Observações sobre o Projeto](#obervações-sobre-o-projeto)
+* [Observações sobre o Projeto](#observações-sobre-o-projeto)
 
 ## Informações Gerais
 Este projeto consiste numa Web API que valida se uma senha é válida.
