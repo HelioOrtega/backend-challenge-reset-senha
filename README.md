@@ -1,10 +1,11 @@
 # API Reset de Senha
 
 ## Tabela de Conteúdo
-* [Informações Gerais](#informaes-gerais)
+* [Informações Gerais](#informações-gerais)
 * [Tecnologias](#tecnologias)
 * [Setup](#setup)
-* [Validação de Senha](#validao-de-senha)
+* [Validação de Senha](#validação-de-senha)
+* [Observações sobre o Projeto](#obervações-sobre-o-projeto)
 
 ## Informações Gerais
 Este projeto consiste numa Web API que valida se uma senha é válida.
