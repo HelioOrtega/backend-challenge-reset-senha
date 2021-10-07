@@ -1,31 +1,30 @@
 #API Reset de Senha
 
-## Tabela de Conteúdo
+##Tabela de Conteúdo
 * [Informações Gerais](#informaes-gerais)
 * [Tecnologias](#tecnologias)
 * [Setup](#setup)
 
-## Informações Gerais
+##Informações Gerais
 Este projeto consiste numa Web API que valida se uma senha é válida.
 
-## Tecnologias
+##Tecnologias
 O projeto foi criado com:
 * Java 11
 * Spring Boot
 
-## Setup
+##Setup
 
-###Ferramentas necessárias
+##Ferramentas necessárias
 * Postman
 * IntelliJ ou Eclipse
 
-###Execução
+##Execução
 * Para rodar esse projeto, é necessário rodar a classe Application.java.
-* Em seguida, deve chamar pelo Postman a API Valida Senha
+* Em seguida, deve chamar pelo Postman a API Valida Senha (/v1/senha/validar/{senha})
+* Onde {senha} deve ser substituído pela senha que deve ser validada
 
 
 ```
-$ cd ../lorem
-$ npm install
-$ npm start
+
 ```
