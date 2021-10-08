@@ -74,4 +74,14 @@ public class PasswordUtilsTest {
     public void shouldValidateTrueWhenPasswordHasNoRepeatingCharacters() {
         assertTrue(utils.validatePasswordRegex("abcde", PasswordUtils.REGEX_REPEATED_CHAR));
     }
+
+    @Test
+    public void shouldValidateFalseWhenPasswordisEmpty() {
+        assertFalse(utils.validatePasswordRegex("", PasswordUtils.REGEX_EMPTY_OR_SPACES_CHAR));
+    }
+
+    @Test
+    public void shouldValidateFalseWhenPasswordHasEmptySpaces() {
+        assertFalse(utils.validatePasswordRegex(" ", PasswordUtils.REGEX_EMPTY_OR_SPACES_CHAR));
+    }
 }

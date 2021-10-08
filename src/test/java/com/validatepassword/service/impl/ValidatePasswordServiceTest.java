@@ -1,16 +1,12 @@
 package com.validatepassword.service.impl;
 
-import com.validatepassword.exception.BadRequestException;
 import com.validatepassword.model.ValidatePasswordResponseModel;
-import org.junit.Before;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import static com.validatepassword.utils.PasswordUtils.*;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.spy;
-import static org.mockito.Mockito.when;
 
 public class ValidatePasswordServiceTest {
 
@@ -22,13 +18,6 @@ public class ValidatePasswordServiceTest {
     @BeforeEach
     private void init() {
         service = spy(ValidePasswordServiceImpl.class);
-    }
-
-    @Test
-    public void shouldValidateFalseWhenPasswordIsEmpty() {
-        Assertions.assertThrows(BadRequestException.class, () -> {
-            service.validatePassword("");
-        });
     }
 
     @Test

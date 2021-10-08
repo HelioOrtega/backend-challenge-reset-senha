@@ -4,7 +4,6 @@ import com.validatepassword.enums.ValidationEnum;
 import com.validatepassword.model.ValidatePasswordResponseModel;
 import com.validatepassword.service.ValidePasswordService;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -25,14 +24,6 @@ public class ValidePasswordServiceImpl implements ValidePasswordService {
 
         log.info("Validando a senha");
 
-        if(StringUtils.containsWhitespace(password)) {
-            errorList.add(PASSWORD_CONTAINS_SPACES);
-        }
-
-        if(validatePasswordRegex(password, REGEX_REPEATED_CHAR)) {
-            errorList.add(NOT_REPEATED_REQUIRED);
-        }
-
         for (ValidationEnum validationEnum : ValidationEnum.values()) {
             boolean isPasswordValid = validatePasswordRegex(password, validationEnum.getRegex());
             if (!isPasswordValid) {
@@ -46,7 +37,7 @@ public class ValidePasswordServiceImpl implements ValidePasswordService {
 
         log.info("Senha valdiada com sucesso");
 
-        return ValidatePasswordResponseModel.builder().valid(isValid).errorList(errorList).build();
+        return ValidatePasswordResponseModel.builder().isValid(isValid).errorList(errorList).build();
     }
 
 }

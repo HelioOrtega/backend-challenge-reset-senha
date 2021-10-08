@@ -13,6 +13,6 @@ import java.util.List;
 @Builder
 public class ValidatePasswordResponseModel {
 
-    private boolean valid;
+    private boolean isValid;
     private List<String> errorList;
 }
