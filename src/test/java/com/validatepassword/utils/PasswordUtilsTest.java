@@ -77,11 +77,11 @@ public class PasswordUtilsTest {
 
     @Test
     public void shouldValidateFalseWhenPasswordisEmpty() {
-        assertFalse(utils.validatePasswordRegex("", PasswordUtils.REGEX_EMPTY_OR_SPACES_CHAR));
+        assertFalse(utils.validatePasswordRegex("", PasswordUtils.REGEX_NOT_EMPTY));
     }
 
     @Test
     public void shouldValidateFalseWhenPasswordHasEmptySpaces() {
-        assertFalse(utils.validatePasswordRegex(" ", PasswordUtils.REGEX_EMPTY_OR_SPACES_CHAR));
+        assertFalse(utils.validatePasswordRegex(" ", PasswordUtils.REGEX_BLANK_SPACE));
     }
 }
