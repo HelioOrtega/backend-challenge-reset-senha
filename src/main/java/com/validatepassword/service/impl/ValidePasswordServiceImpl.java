@@ -22,12 +22,13 @@ public class ValidePasswordServiceImpl implements ValidePasswordService {
         boolean isValid = false;
         List<String> errorList = new ArrayList<>();
 
-        log.info("Validando a senha");
+        log.info("Validando a senha...");
 
-        for (ValidationEnum validationEnum : ValidationEnum.values()) {
-            boolean isPasswordValid = validatePasswordRegex(password, validationEnum.getRegex());
+        for (ValidationEnum validation : ValidationEnum.values()) {
+            boolean isPasswordValid = validatePasswordRegex(password, validation.getRegex());
             if (!isPasswordValid) {
-                errorList.add(validationEnum.getMessage());
+                log.info("Validando o critério de senha - "+validation.getMessage());
+                errorList.add(validation.getMessage());
             }
         }
 
@@ -35,7 +36,7 @@ public class ValidePasswordServiceImpl implements ValidePasswordService {
             isValid = true;
         }
 
-        log.info("Senha valdiada com sucesso");
+        log.info("Senha validiada com sucesso!");
 
         return ValidatePasswordResponseModel.builder().isValid(isValid).errorList(errorList).build();
     }
