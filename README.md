@@ -28,7 +28,7 @@ Para acessar a aplicação é necessário que todos os pré requisitos estejam i
 * Agora vamos baixar o projeto, abra o terminal(shell ou CMD) e digite:
 
 ```
-docker pull helioortega/case-reset-senha
+docker pull helioortega/case-validate-password
 ```
 
 ## Rodando a aplicação
@@ -36,7 +36,7 @@ docker pull helioortega/case-reset-senha
 * Após baixar o projeto vamos rodar a aplicação, abra o terminal(shell ou CMD) e digite:
 
 ```
-docker run -d -p 7075:7075 helioortega/case-reset-senha
+docker run -d -p 8080:8080 helioortega/case-validate-password
 ```
 ## Validação de Senha
 * A senha deverá seguir os critérios a seguir para ser considerada válida

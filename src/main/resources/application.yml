@@ -1,0 +1,4 @@
+## contexto da aplicacao
+server:
+  port: 8080
+  servlet.contextPath: /case-validate-password
