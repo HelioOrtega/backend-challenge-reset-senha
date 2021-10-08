@@ -8,10 +8,10 @@
 		<version>2.5.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.case-reset-senha</groupId>
-	<artifactId>case</artifactId>
+	<groupId>com.case-validate-password</groupId>
+	<artifactId>case-validate-password</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>case</name>
+	<name>case-validate-password</name>
 	<description>Case para Reset Senha Itaú</description>
 	<properties>
 		<java.version>11</java.version>
@@ -36,7 +36,25 @@
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
-    </dependencies>
+
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-inline</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.12.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>6.0.13.Final</version>
+		</dependency>
+	</dependencies>
 
 	<build>
 		<plugins>

@@ -1,4 +1,4 @@
-package com.validasenha.model;
+package com.validatepassword.model;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -14,5 +14,5 @@ import java.util.List;
 public class ValidatePasswordResponseModel {
 
     private boolean valid;
-    private List<ValidatePasswordMessage> messageList;
+    private List<String> errorList;
 }

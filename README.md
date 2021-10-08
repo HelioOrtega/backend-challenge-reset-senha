@@ -19,19 +19,24 @@ O projeto foi criado com:
 ## Setup
 
 ## Ferramentas necessárias
-* Postman (https://www.postman.com/)
-* IntelliJ (https://www.jetbrains.com/pt-br/idea/)
+* Docker (https://hub.docker.com/)
 
-## Execução
-* Para rodar esse projeto, é necessário executar a classe Application.java.
-* Em seguida, deve chamar pelo Postman a API Valida Senha (/v1/senha/validar)
-* Deve ser passado um objeto JSON contendo o atributo de chave "senha" e o valor da senha a ser validada
-* Conforme exemplo:
+Para acessar a aplicação é necessário que todos os pré requisitos estejam instalados.
+
+## Baixando o projeto
+
+* Agora vamos baixar o projeto, abra o terminal(shell ou CMD) e digite:
 
 ```
-{
-    "senha": "123456"
-}
+docker pull helioortega/case-reset-senha
+```
+
+## Rodando a aplicação
+
+* Após baixar o projeto vamos rodar a aplicação, abra o terminal(shell ou CMD) e digite:
+
+```
+docker run -d -p 7075:7075 helioortega/case-reset-senha
 ```
 ## Validação de Senha
 * A senha deverá seguir os critérios a seguir para ser considerada válida

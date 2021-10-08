@@ -1,6 +1,6 @@
-package com.validasenha.service;
+package com.validatepassword.service;
 
-import com.validasenha.model.ValidatePasswordResponseModel;
+import com.validatepassword.model.ValidatePasswordResponseModel;
 
 public interface ValidePasswordService {
 

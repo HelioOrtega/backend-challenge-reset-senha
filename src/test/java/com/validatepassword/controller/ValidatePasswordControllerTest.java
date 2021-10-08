@@ -1,4 +1,4 @@
-package com.validasenha.controller;
+package com.validatepassword.controller;
 
 public class ValidatePasswordControllerTest {
 }
