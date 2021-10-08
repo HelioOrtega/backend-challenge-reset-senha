@@ -1,7 +1,6 @@
 package com.validatepassword.service.impl;
 
 import com.validatepassword.enums.ValidationEnum;
-import com.validatepassword.exception.BadRequestException;
 import com.validatepassword.model.ValidatePasswordResponseModel;
 import com.validatepassword.service.ValidePasswordService;
 import lombok.extern.slf4j.Slf4j;
@@ -24,19 +23,15 @@ public class ValidePasswordServiceImpl implements ValidePasswordService {
         boolean isValid = false;
         List<String> errorList = new ArrayList<>();
 
-        if(password==null || password.isEmpty()) {
-            throw new BadRequestException(NULL_PASSWORD);
-        }
+        log.info("Validando a senha");
 
         if(StringUtils.containsWhitespace(password)) {
             errorList.add(PASSWORD_CONTAINS_SPACES);
         }
 
-        if(validatePasswordRegex(password, REGEX_NOT_REPEATED)) {
+        if(validatePasswordRegex(password, REGEX_REPEATED_CHAR)) {
             errorList.add(NOT_REPEATED_REQUIRED);
         }
-
-        log.info("Validando a senha");
 
         for (ValidationEnum validationEnum : ValidationEnum.values()) {
             boolean isPasswordValid = validatePasswordRegex(password, validationEnum.getRegex());

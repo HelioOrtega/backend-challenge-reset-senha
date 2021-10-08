@@ -7,7 +7,9 @@ public class PasswordUtils {
     public static final String REGEX_UPPERCASE_CHAR = "(.*[A-Z].*)";
     public static final String REGEX_LOWERCASE_CHAR = "(.*[a-z].*)";
     public static final String REGEX_SPECIAL_CHAR = "(.*[!@#$%^&*()\\-+].*)";
-    public static final String REGEX_NOT_REPEATED = "(.)(?=.*\\1)";
+    public static final String REGEX_REPEATED_CHAR = "^(?!.*?(.).*?\\1)[a-zA-Z0-9!@#$%^&*()\\-+]*$";
+    public static final String REGEX_EMPTY_OR_SPACES_CHAR = "(.|\\s)*\\S(.|\\s)*";
+
 
     public static final String SIZE_REQUIRED = "A senha precisa ter um tamanho de 9 ou mais caractéress";
     public static final String DIGIT_REQUIRED = "A senha precisa ter um dígito de 0 a 9";
@@ -18,7 +20,7 @@ public class PasswordUtils {
     public static final String NULL_PASSWORD = "A senha não pode ser nula";
     public static final String PASSWORD_CONTAINS_SPACES = "A senha não pode conter caractéres vazios";
 
-    public static boolean validatePasswordRegex(String password, String regex){
+    public static boolean validatePasswordRegex(String password, String regex) {
         return password.matches(regex);
     }
 
