@@ -20,72 +20,72 @@ public class PasswordUtilsTest {
     }
 
     @Test
-    public void shouldValidateFalseWhenPasswordSizeNotValid() {
+    public void testShouldValidateFalseWhenPasswordSizeNotValid() {
         assertFalse(utils.validatePasswordRegex("123", PasswordUtils.REGEX_SIZE));
     }
 
     @Test
-    public void shouldValidateTrueWhenPasswordSizeIsValid() {
+    public void testShouldValidateTrueWhenPasswordSizeIsValid() {
         assertTrue(utils.validatePasswordRegex("123456789", PasswordUtils.REGEX_SIZE));
     }
 
     @Test
-    public void shouldValidateFalseWhenPasswordHasNoDigits() {
+    public void testShouldValidateFalseWhenPasswordHasNoDigits() {
         assertFalse(utils.validatePasswordRegex("abcdef", PasswordUtils.REGEX_DIGIT));
     }
 
     @Test
-    public void shouldValidateTrueWhenPasswordHasDigits() {
+    public void testShouldValidateTrueWhenPasswordHasDigits() {
         assertTrue(utils.validatePasswordRegex("abc123", PasswordUtils.REGEX_DIGIT));
     }
 
     @Test
-    public void shouldValidateFalseWhenPasswordHasNoUpperCase() {
+    public void testShouldValidateFalseWhenPasswordHasNoUpperCase() {
         assertFalse(utils.validatePasswordRegex("abc", PasswordUtils.REGEX_UPPERCASE_CHAR));
     }
 
     @Test
-    public void shouldValidateTrueWhenPasswordHasUpperCase() {
+    public void testShouldValidateTrueWhenPasswordHasUpperCase() {
         assertTrue(utils.validatePasswordRegex("Abc", PasswordUtils.REGEX_UPPERCASE_CHAR));
     }
 
     @Test
-    public void shouldValidateFalseWhenPasswordHasNoLowerCase() {
+    public void testShouldValidateFalseWhenPasswordHasNoLowerCase() {
         assertFalse(utils.validatePasswordRegex("ABC", PasswordUtils.REGEX_LOWERCASE_CHAR));
     }
 
     @Test
-    public void shouldValidateTrueWhenPasswordHasLowerCaseCase() {
+    public void testShouldValidateTrueWhenPasswordHasLowerCaseCase() {
         assertTrue(utils.validatePasswordRegex("ABc", PasswordUtils.REGEX_LOWERCASE_CHAR));
     }
 
     @Test
-    public void shouldValidateFalseWhenPasswordHasNoSpecialCharacters() {
+    public void testShouldValidateFalseWhenPasswordHasNoSpecialCharacters() {
         assertFalse(utils.validatePasswordRegex("abc123", PasswordUtils.REGEX_SPECIAL_CHAR));
     }
 
     @Test
-    public void shouldValidateTrueWhenPasswordHasSpecialCharacters() {
+    public void testShouldValidateTrueWhenPasswordHasSpecialCharacters() {
         assertTrue(utils.validatePasswordRegex("abc!@#$123", PasswordUtils.REGEX_SPECIAL_CHAR));
     }
 
     @Test
-    public void shouldValidateFalseWhenPasswordHasRepeatingCharacters() {
+    public void testShouldValidateFalseWhenPasswordHasRepeatingCharacters() {
         assertFalse(utils.validatePasswordRegex("AAbcde", PasswordUtils.REGEX_REPEATED_CHAR));
     }
 
     @Test
-    public void shouldValidateTrueWhenPasswordHasNoRepeatingCharacters() {
+    public void testShouldValidateTrueWhenPasswordHasNoRepeatingCharacters() {
         assertTrue(utils.validatePasswordRegex("abcde", PasswordUtils.REGEX_REPEATED_CHAR));
     }
 
     @Test
-    public void shouldValidateFalseWhenPasswordisEmpty() {
+    public void testShouldValidateFalseWhenPasswordisEmpty() {
         assertFalse(utils.validatePasswordRegex("", PasswordUtils.REGEX_NOT_EMPTY));
     }
 
     @Test
-    public void shouldValidateFalseWhenPasswordHasEmptySpaces() {
+    public void testShouldValidateFalseWhenPasswordHasEmptySpaces() {
         assertFalse(utils.validatePasswordRegex(" ", PasswordUtils.REGEX_BLANK_SPACE));
     }
 }

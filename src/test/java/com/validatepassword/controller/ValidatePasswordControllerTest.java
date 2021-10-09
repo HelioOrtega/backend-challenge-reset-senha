@@ -26,7 +26,7 @@ public class ValidatePasswordControllerTest {
 	private MockMvc mockMvc;
 
 	@Test
-	public void testShouldReturnOkWhenPasswordIsNotNull() throws Exception {
+	public void testShouldReturnOkWhenPasswordIsNotNullOnValidate() throws Exception {
 		this.mockMvc
 				.perform(post("/v1/password/validate")
 						.contentType(MediaType.APPLICATION_JSON)
@@ -37,7 +37,7 @@ public class ValidatePasswordControllerTest {
 	}
 
 	@Test
-	public void testShouldReturnBadRequestWhenPasswordIsNull() throws Exception {
+	public void testShouldReturnBadRequestWhenPasswordIsNullOnValidate() throws Exception {
 		this.mockMvc
 				.perform(post("/v1/password/validate")
 						.content(asJsonString(new ValidatePasswordRequestModel(null)))
@@ -47,7 +47,7 @@ public class ValidatePasswordControllerTest {
 	}
 
 	@Test
-	public void testShouldReturnOkWhenPasswordIsNotNullValidateOnly() throws Exception {
+	public void testShouldReturnOkWhenPasswordIsNotNullOnValidateOnly() throws Exception {
 		this.mockMvc
 				.perform(post("/v1/password/validate-only")
 						.contentType(MediaType.APPLICATION_JSON)
@@ -58,7 +58,7 @@ public class ValidatePasswordControllerTest {
 	}
 
 	@Test
-	public void testShouldReturnBadRequestWhenPasswordIsNullValidateOnly() throws Exception {
+	public void testShouldReturnBadRequestWhenPasswordIsNullOnValidateOnly() throws Exception {
 		this.mockMvc
 				.perform(post("/v1/password/validate-only")
 						.content(asJsonString(new ValidatePasswordRequestModel(null)))
