@@ -1,6 +1,7 @@
 package com.validatepassword.service;
 
 import com.validatepassword.model.ValidatePasswordResponseModel;
+
 /**
  * @author helio.ortega
  * @since 10/2021
