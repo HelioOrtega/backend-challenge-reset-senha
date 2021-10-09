@@ -11,6 +11,10 @@ import java.util.List;
 
 import static com.validatepassword.utils.PasswordUtils.*;
 
+/**
+ * @author helio.ortega
+ * @since 10/2021
+ */
 @Service
 @Slf4j
 public class ValidePasswordServiceImpl implements ValidePasswordService {
@@ -20,15 +24,19 @@ public class ValidePasswordServiceImpl implements ValidePasswordService {
     public ValidatePasswordResponseModel validatePassword(String password) {
 
         boolean isValid = false;
+        boolean isPasswordValid;
         List<String> errorList = new ArrayList<>();
 
         log.info("Validando a senha...");
 
         for (ValidationEnum validation : ValidationEnum.values()) {
-            boolean isPasswordValid = validatePasswordRegex(password, validation.getRegex());
+            isPasswordValid = validatePasswordRegex(password, validation.getRegex());
+            log.info("Validando o critério de senha - "+validation.getMessage());
             if (!isPasswordValid) {
-                log.info("Validando o critério de senha - "+validation.getMessage());
+                log.info("Critério inválido");
                 errorList.add(validation.getMessage());
+            } else {
+                log.info("Critério válido");
             }
         }
 

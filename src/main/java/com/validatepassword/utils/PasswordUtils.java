@@ -1,5 +1,9 @@
 package com.validatepassword.utils;
 
+/**
+ * @author helio.ortega
+ * @since 10/2021
+ */
 public class PasswordUtils {
 
     public static final String REGEX_SIZE = ".{9,}";

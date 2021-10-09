@@ -4,6 +4,10 @@ import lombok.*;
 
 import javax.validation.constraints.NotNull;
 
+/**
+ * @author helio.ortega
+ * @since 10/2021
+ */
 @Getter
 @Setter
 @ToString

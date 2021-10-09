@@ -5,6 +5,10 @@ import lombok.Getter;
 
 import static com.validatepassword.utils.PasswordUtils.*;
 
+/**
+ * @author helio.ortega
+ * @since 10/2021
+ */
 @Getter
 @AllArgsConstructor
 public enum ValidationEnum {

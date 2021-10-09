@@ -2,6 +2,10 @@ package com.validatepassword;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ * @author helio.ortega
+ * @since 10/2021
+ */
 public class TestHelper {
 
     public static String asJsonString(final Object obj) {

@@ -7,6 +7,10 @@ import lombok.ToString;
 
 import java.util.List;
 
+/**
+ * @author helio.ortega
+ * @since 10/2021
+ */
 @Getter
 @Setter
 @ToString

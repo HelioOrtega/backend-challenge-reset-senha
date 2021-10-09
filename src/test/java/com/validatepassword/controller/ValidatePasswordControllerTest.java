@@ -14,6 +14,10 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+/**
+ * @author helio.ortega
+ * @since 10/2021
+ */
 @SpringBootTest(classes = Application.class)
 @AutoConfigureMockMvc
 public class ValidatePasswordControllerTest {

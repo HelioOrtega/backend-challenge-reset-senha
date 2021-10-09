@@ -8,6 +8,10 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
+/**
+ * @author helio.ortega
+ * @since 10/2021
+ */
 @RestController
 @RequestMapping("/v1/password")
 public class ValidatePasswordController {

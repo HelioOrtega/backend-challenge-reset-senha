@@ -8,6 +8,10 @@ import static com.validatepassword.utils.PasswordUtils.*;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.spy;
 
+/**
+ * @author helio.ortega
+ * @since 10/2021
+ */
 public class ValidatePasswordServiceTest {
 
     private ValidePasswordServiceImpl service;

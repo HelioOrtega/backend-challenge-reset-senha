@@ -38,6 +38,13 @@ docker pull helioortega/case-validate-password
 ```
 docker run -d -p 8080:8080 helioortega/case-validate-password
 ```
+
+## Acesando a API
+* Após rodar a imagem docker, utilize o link abaixo para acessar o Swagger da API
+```
+http://localhost:8080/case-validate-password/swagger-ui.html
+```
+
 ## Validação de Senha
 * A senha deverá seguir os critérios a seguir para ser considerada válida
 * Nove ou mais caracteres 

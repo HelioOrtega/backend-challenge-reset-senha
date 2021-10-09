@@ -6,6 +6,10 @@ import org.junit.jupiter.api.Test;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+/**
+ * @author helio.ortega
+ * @since 10/2021
+ */
 public class PasswordUtilsTest {
 
     private PasswordUtils utils;
