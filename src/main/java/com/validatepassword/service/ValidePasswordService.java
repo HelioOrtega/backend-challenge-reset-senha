@@ -16,4 +16,12 @@ public interface ValidePasswordService {
      * inválida, e uma lista de erros de validação da senha
      */
     ValidatePasswordResponseModel validatePassword(String senha);
+
+    /**
+     *
+     * @param senha
+     * @return boolean
+     * Valida a senha recebida em String e retorna um boolean false se a senha for inválida e true se for válida
+     */
+    boolean validatePasswordOnly(String senha);
 }

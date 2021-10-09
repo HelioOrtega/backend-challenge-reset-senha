@@ -4,6 +4,7 @@ import com.validatepassword.enums.ValidationEnum;
 import com.validatepassword.model.ValidatePasswordResponseModel;
 import com.validatepassword.service.ValidePasswordService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.MutablePropertyValues;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -19,15 +20,35 @@ import static com.validatepassword.utils.PasswordUtils.*;
 @Slf4j
 public class ValidePasswordServiceImpl implements ValidePasswordService {
 
-
     @Override
     public ValidatePasswordResponseModel validatePassword(String password) {
 
-        boolean isValid = false;
-        boolean isPasswordValid;
-        List<String> errorList = new ArrayList<>();
+        boolean isValid=false;
+
+        List<String> errorList = validatePasswordCritereas(password);
+
+        if(errorList.isEmpty()){
+            isValid=true;
+        }
+
+        return ValidatePasswordResponseModel.builder().isValid(isValid).errorList(errorList).build();
+    }
+
+    @Override
+    public boolean validatePasswordOnly(String password) {
+        if(validatePasswordCritereas(password).isEmpty()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private  ArrayList<String>  validatePasswordCritereas(String password) {
 
         log.info("Validando a senha...");
+
+        boolean isPasswordValid;
+        ArrayList<String> errorList = new ArrayList<>();
 
         for (ValidationEnum validation : ValidationEnum.values()) {
             isPasswordValid = validatePasswordRegex(password, validation.getRegex());
@@ -40,13 +61,9 @@ public class ValidePasswordServiceImpl implements ValidePasswordService {
             }
         }
 
-        if(errorList.isEmpty()) {
-            isValid = true;
-        }
-
         log.info("Senha validiada com sucesso!");
 
-        return ValidatePasswordResponseModel.builder().isValid(isValid).errorList(errorList).build();
+        return errorList;
     }
 
 }

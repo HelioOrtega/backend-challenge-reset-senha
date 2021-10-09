@@ -23,4 +23,9 @@ public class ValidatePasswordController {
     public ValidatePasswordResponseModel validatePassword(@Valid @RequestBody ValidatePasswordRequestModel request) {
         return service.validatePassword(request.getPassword());
     }
+
+    @PostMapping("/validate-only")
+    public boolean validatePasswordOnly(@Valid @RequestBody ValidatePasswordRequestModel request) {
+        return service.validatePasswordOnly(request.getPassword());
+    }
 }

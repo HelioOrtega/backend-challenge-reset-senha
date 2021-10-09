@@ -45,4 +45,25 @@ public class ValidatePasswordControllerTest {
 				.andDo(print())
 				.andExpect(status().is4xxClientError());
 	}
+
+	@Test
+	public void testShouldReturnOkWhenPasswordIsNotNullValidateOnly() throws Exception {
+		this.mockMvc
+				.perform(post("/v1/password/validate-only")
+						.contentType(MediaType.APPLICATION_JSON)
+						.content(asJsonString(new ValidatePasswordRequestModel("test-password")))
+						.accept(MediaType.APPLICATION_JSON))
+				.andDo(print())
+				.andExpect(status().is2xxSuccessful());
+	}
+
+	@Test
+	public void testShouldReturnBadRequestWhenPasswordIsNullValidateOnly() throws Exception {
+		this.mockMvc
+				.perform(post("/v1/password/validate-only")
+						.content(asJsonString(new ValidatePasswordRequestModel(null)))
+						.accept(MediaType.APPLICATION_JSON))
+				.andDo(print())
+				.andExpect(status().is4xxClientError());
+	}
 }
