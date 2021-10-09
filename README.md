@@ -1,14 +1,18 @@
-# API Reset de Senha
+# API de Validação de Senha
 
 ## Tabela de Conteúdo
 * [Informações Gerais](#informações-gerais)
 * [Tecnologias](#tecnologias)
 * [Setup](#setup)
+* [Baixando o projeto](#baixando-o-projeto)
+* [Rodando a aplicação](#rodando-a-aplição)
+* [Acesando a API](#acesando-a-api)
 * [Validação de Senha](#validação-de-senha)
 * [Observações sobre o Projeto](#observações-sobre-o-projeto)
+* [Testes do Projeto](#testes-do-projeto)
 
 ## Informações Gerais
-Este projeto consiste numa Web API que valida se uma senha é válida.
+Este projeto consiste numa Web API que valida se uma senha é válida seguindo os critérios definidos a seguir.
 
 ## Tecnologias
 O projeto foi criado com:
@@ -40,7 +44,7 @@ docker run -d -p 8080:8080 helioortega/case-validate-password
 ```
 
 ## Acesando a API
-* Após rodar a imagem docker, utilize o link abaixo para acessar o Swagger da API
+* Após rodar a imagem docker, utilize o link abaixo para acessar o Swagger UI da API
 ```
 http://localhost:8080/case-validate-password/swagger-ui.html
 ```
@@ -77,3 +81,4 @@ http://localhost:8080/case-validate-password/swagger-ui.html
 * No pacote configuration há uma classe de configuração SwaggerConfig
 * Essa configuração permite a interface do Swagger UI seja acessada quando a aplicação estiver rodando
 
+## Testes do Projeto
