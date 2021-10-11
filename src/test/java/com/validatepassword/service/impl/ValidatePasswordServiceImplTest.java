@@ -12,7 +12,7 @@ import static org.mockito.Mockito.spy;
  * @author helio.ortega
  * @since 10/2021
  */
-public class ValidatePasswordServiceTest {
+public class ValidatePasswordServiceImplTest {
 
     private ValidePasswordServiceImpl service;
 
