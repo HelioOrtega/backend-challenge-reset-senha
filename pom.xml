@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.case-validate-password</groupId>
 	<artifactId>case-validate-password</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0.RELEASE</version>
 	<name>case-validate-password</name>
 	<description>Case para Reset Senha Itaú</description>
 	<properties>
